@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>GeekHour.AspNetCore.MudBlazor.Templates</PackageId>
+    <Title>MudBlazor Templates</Title>
+    <Authors>Geek Hour</Authors>
+    <Description>Project templates for Blazor wired up with MudBlazor.</Description>
+    <PackageTags>dotnet-new;templates;blazor;server;webassembly;mudblazor</PackageTags>
+    <TargetFramework>net6.0</TargetFramework>
+    <License>MIT</License>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Content\**\*" Exclude="Content\**\bin\**;Content\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>
