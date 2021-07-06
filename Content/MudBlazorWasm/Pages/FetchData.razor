@@ -1,0 +1,46 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<MudGrid Class="mt-4">
+    <MudItem xs="12" sm="12" md="12">
+        <MudText Typo="Typo.h3">Weather forecast</MudText>
+        <MudText Typo="Typo.subtitle1">This component demonstrates fetching data from a service.</MudText>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="12">
+        <MudTable Items="@forecasts" Hover="true" Breakpoint="Breakpoint.Md" Loading="@(forecasts == null)"
+            LoadingProgressColor="Color.Info">
+            <HeaderContent>
+                <MudTh>Date</MudTh>
+                <MudTh>Temp. (C)</MudTh>
+                <MudTh>Temp. (F)</MudTh>
+                <MudTh>Summary</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Date">@context.Date</MudTd>
+                <MudTd DataLabel="TempC">@context.TemperatureC</MudTd>
+                <MudTd DataLabel="TempF">@context.TemperatureF</MudTd>
+                <MudTd DataLabel="Summary">@context.Summary</MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    public class WeatherForecast
+    {
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}

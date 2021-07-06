@@ -1,0 +1,15 @@
+﻿<MudAlert Severity="Severity.Info">
+    <strong>@Title</strong>
+
+    <span>
+        Please take our
+        <a target="_blank" class="font-weight-bold" href="https://go.microsoft.com/fwlink/?linkid=2148851">brief survey</a> 
+        and tell us what you think.
+    </span>
+</MudAlert>
+
+@code {
+    // Demonstrates how a parent component can supply parameters
+    [Parameter]
+    public string Title { get; set; }
+}
