@@ -9,11 +9,14 @@
     <Description>Project templates for Blazor wired up with MudBlazor.</Description>
     <PackageTags>dotnet-new;templates;blazor;server;webassembly;mudblazor</PackageTags>
     <TargetFramework>net6.0</TargetFramework>
-    <License>MIT</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/GeekyHours/MudBlazorTemplates</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+    <Copyright>Geek Hour</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
