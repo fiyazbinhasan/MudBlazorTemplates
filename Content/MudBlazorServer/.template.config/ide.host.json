@@ -5,5 +5,6 @@
     },
     "description": {
       "text": "A project template for creating a Blazor server app wired up with MudBlazor that runs server-side inside an ASP.NET Core app and handles user interactions over a SignalR connection. This template can be used for web apps with rich dynamic user interfaces (UIs)."
-    }
+    },
+    "icon": "icon.png"
 }
